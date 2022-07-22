@@ -18,6 +18,22 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="row ms-3">
+                                                <div class="form-group  ml-3">
+                                                    From Date
+                                                    <div class="input-group date" id="fromDate">
+                                                        <?php $from_date = isset($_GET["from_date"])?$_GET["from_date"]:"";?>
+                                                        <input autocomplete="off" class="form-control datepicker" id="from_date"
+                                                            name="from_date" placeholder="From Date" type="date" value="{{$from_date}}">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group  ml-2">
+                                                    To Date
+                                                    <div class="input-group date" id="toDate">
+                                                        <?php $to_date = isset($_GET["to_date"])?$_GET["to_date"]:"";?>
+                                                        <input autocomplete="off" class="form-control datepicker" id="to_date"
+                                                           name="to_date" placeholder="To Date" type="date" value="{{$to_date}}">
+                                                    </div>
+                                                </div>
                                                 <div class="d-flex">
                                                     <div class="input-group input-group-sm mt-1 ml-3 mb-3" >
                                                         <?php $search_data = isset($_GET["search_data"])?$_GET["search_data"]:"";?>
@@ -64,8 +80,8 @@
                                         <th scope="col">Email</th>
                                         <th scope="col">Phone</th>
                                         <th scope="col">Address</th>
-                                        {{-- <th scope="col">Created Date</th>
-                                    <th scope="col">Updated Date</th> --}}
+                                        <th scope="col">Created Date</th>
+                                        <th scope="col">Updated Date</th>
                                         <th scope="col">Action</th>
 
                                     </tr>
@@ -78,8 +94,8 @@
                                             <td>{{ $users->email }}</td>
                                             <td>{{ $users->phone }}</td>
                                             <td>{{ $users->address }}</td>
-                                            {{-- <td>{{ $users->created_at}}</td>
-                                        <td>{{ $users->updated_at }}</td> --}}
+                                            <td>{{ $users->created_at}}</td>
+                                            <td>{{ $users->updated_at }}</td>
                                             <td>
                                                 <a href="{{ route('user.delete', $users->id) }}"
                                                     class="btn btn-sm btn-danger">
